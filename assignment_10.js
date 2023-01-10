@@ -94,7 +94,7 @@ let newArr = [];
 newArr.push(
   arr
     .filter((elem) => elem > 150)
-    .sort()
+    .sort((a, b) => a - b)
     .join(", ")
 );
 console.log(newArr);
@@ -108,6 +108,6 @@ let checkAndSort = (str) => {
     if (!isNaN(element)) newArr.push(+element);
   });
   console.log(newArr);
-  return newArr.filter((number) => number > 150).sort();
+  return newArr.filter((number) => number > 150).sort((a, b) => a - b);
 };
 console.log(checkAndSort(input));
