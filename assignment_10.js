@@ -11,6 +11,19 @@ let out = arr
   }, 0);
 console.log(out);
 
+/////////////////////////
+const numbers = [1, -4, 12, 0, -3, 29, -150];
+const positiveAddsUp = (arr) => {
+  return arr
+    .filter((num) => num > 0)
+    .reduce((accum, value) => {
+      consuole.log(accum);
+      console.log(value);
+      return accum + value;
+    }, 0);
+};
+console.log(positiveAddsUp(numbers));
+
 // Assignment 2
 
 // Write a JS code that calculates the average of scores that students took in a math class below.
@@ -31,6 +44,16 @@ let sum = arr.reduce((accum, num) => (accum += num));
 let average = sum / arr.length;
 console.log(average);
 
+///////////////////////////////
+
+const averageGrade = (obj) => {
+  const arr = Object.values(obj);
+  let sum = arr.reduce((accum, num) => (accum += num), 0);
+  let average = sum / arr.length;
+  return average;
+};
+console.log(averageGrade(obj));
+
 // Assignment 3
 
 // Write a JS code to display the repetition number of each character in a string.
@@ -43,6 +66,21 @@ arr.forEach(function (letter) {
   obj[letter] = (obj[letter] || 0) + 1;
 });
 console.log(obj);
+
+/////////////
+
+let text = "www.clarusway.com";
+const letterCounter = (str) => {
+  const newArr = str.split("");
+  const newObj = newArr.reduce((acc, letter) => {
+    // if(acc[letter]) acc[letter]++
+    // else acc[letter] = 1
+    acc[letter] ? acc[letter]++ : (acc[letter] = 1);
+    return acc;
+  }, {});
+  return newObj;
+};
+console.log(letterCounter(text));
 
 // Assignment 4
 
@@ -60,3 +98,16 @@ newArr.push(
     .join(", ")
 );
 console.log(newArr);
+
+/////////////////
+
+let checkAndSort = (str) => {
+  let arr = str.split(" ");
+  let newArr = [];
+  arr.forEach((element) => {
+    if (!isNaN(element)) newArr.push(+element);
+  });
+  console.log(newArr);
+  return newArr.filter((number) => number > 150).sort();
+};
+console.log(checkAndSort(input));
