@@ -27,10 +27,8 @@ let obj = {
   Tim: 60,
 };
 let arr = Object.values(obj);
-let average = arr.reduce((accum, num) => {
-  accum += num;
-  return accum / 2;
-}, 0);
+let sum = arr.reduce((accum, num) => (accum += num));
+let average = sum / arr.length;
 console.log(average);
 
 // Assignment 3
